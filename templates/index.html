@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Welcome to Flex Flask Jinja</h1>
+    <div class="container">
+        {% for x in range(0,var) %}
+        {% for i in range(2) %}
+        {% if i==0 %}
+        <div class="box" style="background-color:black;"></div>
+        {% else %}
+        <div class="box" style="background-color:red;"></div>
+        {% endif %}
+        {% endfor %}
+        {% endfor %}
+    </div>
+</body>
+<script type='text/javascript' src="{{ url_for('static', filename='script.js')}}"></script>
+</html>
