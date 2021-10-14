@@ -9,17 +9,27 @@
 </head>
 <body>
     <h1>Welcome to Flex Flask Jinja</h1>
-    <div class="container">
-        {% for x in range(0,var) %}
-        {% for i in range(2) %}
-        {% if i==0 %}
-        <div class="box" style="background-color:black;"></div>
+    <table>
+        {% for i in range(column) %}
+        {% for x in range(2) %}
+        {% if x==1 %}
+            <tr class="container">
+                {% for c in range(4) %}
+                <td class="box1"></td>
+                <td class="box2"></td>
+                {% endfor %}
+            </tr>
         {% else %}
-        <div class="box" style="background-color:red;"></div>
+            <tr class="container">
+                {% for c in range(4) %}
+                <td class="box2"></td>
+                <td class="box1"></td>
+                {% endfor %}
+            </tr>
         {% endif %}
         {% endfor %}
         {% endfor %}
-    </div>
+    </table>
 </body>
 <script type='text/javascript' src="{{ url_for('static', filename='script.js')}}"></script>
 </html>
