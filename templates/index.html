@@ -10,24 +10,12 @@
 <body>
     <h1>Welcome to Flex Flask Jinja</h1>
     <table>
-        {% for i in range(column) %}
-        {% for x in range(2) %}
-        {% if x==1 %}
+        {% for i in range(column): %}
             <tr class="container">
-                {% for c in range(4) %}
-                <td class="box1"></td>
-                <td class="box2"></td>
+                {% for c in range(row) %}
+                <td class="box{{ (i+c)%2+1 }} style"></td>
                 {% endfor %}
             </tr>
-        {% else %}
-            <tr class="container">
-                {% for c in range(4) %}
-                <td class="box2"></td>
-                <td class="box1"></td>
-                {% endfor %}
-            </tr>
-        {% endif %}
-        {% endfor %}
         {% endfor %}
     </table>
 </body>
